@@ -1,0 +1,65 @@
+/* Education.css */
+#education {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Light blue gradient */
+  padding: 60px 0;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* White background for cards to contrast with the section */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title and text styling */
+.card-title {
+  font-size: 22px;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #555;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flexbox for responsiveness */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Column styling */
+.col-md-6 {
+  flex: 0 0 48%;
+  max-width: 48%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
