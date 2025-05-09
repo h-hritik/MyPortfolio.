@@ -242,7 +242,7 @@ function Projects() {
         
         <div className={`text-center mt-12 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
           <a 
-            href="https://github.com/yourusername" 
+            href="https://github.com/h-hritik/" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center py-3 px-6 bg-gray-900 text-white font-medium rounded-lg transition-all hover:bg-gray-800"
