@@ -1,10 +1,8 @@
-// Includes Popper and Bootstrap JS
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import './App.css'; // Renamed import to avoid conflict
+
 import About from './components/About';
 import Certification from './components/Certification';
 import Contact from './components/Contact';
@@ -31,3 +29,4 @@ const App = () => {
 };
 
 export default App;
+
