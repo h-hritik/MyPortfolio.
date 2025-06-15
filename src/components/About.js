@@ -1,5 +1,6 @@
 import { Award, BookOpen, Calendar, Code, Download, ExternalLink, Heart, Mail, MapPin, Phone, User } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import resume from '../documents/Hritik-Maurya-FlowCV-Resume-20250424 (1).pdf';
 import img from '../images/pass02.JPG';
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -171,17 +172,26 @@ const About = () => {
                     </div>
                     
                     {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4">
-                      <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <Download className="w-5 h-5 mr-2" />
-                        Download Resume
-                      </button>
-                      <button className="inline-flex items-center px-6 py-3 bg-white text-gray-700 font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200">
-                        <Mail className="w-5 h-5 mr-2" />
-                        Get In Touch
-                      </button>
-                    </div>
-                  </div>
+                <div className="flex flex-wrap gap-4">
+  {/* Resume Download Button */}
+  <a 
+    href={resume} 
+    download="YourName_Resume.pdf"
+    className="inline-flex items-center px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-blue-600 transition-all duration-300 no-underline"
+  >
+    <Download className="w-5 h-5 mr-2" />
+    Download Resume
+  </a>
+
+  {/* Get In Touch Button */}
+  <button 
+    onClick={() => window.location.href = 'mailto:your.email@example.com'}
+    className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
+  >
+    <Mail className="w-5 h-5 mr-2" />
+    Get In Touch
+  </button>
+</div>
                 </div>
               </div>
             </div>
@@ -493,6 +503,7 @@ const About = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
