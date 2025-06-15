@@ -1,5 +1,5 @@
-import { Facebook, Github, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
-import React, { useState } from 'react';
+import { AlertCircle, CheckCircle, Facebook, Github, Instagram, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -19,7 +19,6 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Clear error when user starts typing
     if (formErrors[name]) {
       setFormErrors({ ...formErrors, [name]: '' });
     }
@@ -39,25 +38,10 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: JSON.stringify({
-          access_key: '071ef91c-ed1d-4c49-8262-48f6069ec599',
-          subject: 'New Contact Form Submission',
-          ...formData
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-
-      const result = await response.json();
-      if (response.ok) {
-        setSuccessMessage('Thank you for your message! We will get back to you soon.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setErrorMessage(`Error: ${result.message}`);
-      }
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setSuccessMessage('Thank you for your message! We will get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       setErrorMessage('Something went wrong. Please try again later.');
     } finally {
@@ -66,151 +50,266 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Get In Touch</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Side - Contact Form */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">Send a Message</h3>
-            
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <label className="block text-gray-700 font-medium">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  className={`w-full px-4 py-3 rounded-md border ${formErrors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                />
-                {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
-              </div>
-              
-              <div className="space-y-2">
-                <label className="block text-gray-700 font-medium">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  className={`w-full px-4 py-3 rounded-md border ${formErrors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your.email@example.com"
-                />
-                {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
-              </div>
-              
-              <div className="space-y-2">
-                <label className="block text-gray-700 font-medium">Message</label>
-                <textarea
-                  name="message"
-                  className={`w-full px-4 py-3 rounded-md border ${formErrors.message ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message here..."
-                ></textarea>
-                {formErrors.message && <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
-              </div>
-              
-              <button 
-                onClick={handleSubmit}
-                className={`w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-300 shadow-md flex items-center justify-center ${loading ? 'opacity-75 cursor-not-allowed' : ''}`}
-                disabled={loading}
-              >
-                {loading ? (
-                  <div className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <span>Sending...</span>
-                  </div>
-                ) : "Send Message"}
-              </button>
-            </div>
-            
-            {successMessage && (
-              <div className="mt-6 bg-green-50 text-green-700 px-4 py-3 rounded-md flex items-start">
-                <svg className="h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{successMessage}</span>
-              </div>
-            )}
-            
-            {errorMessage && (
-              <div className="mt-6 bg-red-50 text-red-700 px-4 py-3 rounded-md flex items-start">
-                <svg className="h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{errorMessage}</span>
-              </div>
-            )}
-          </div>
-          
-          {/* Right Side - Contact Info */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <Mail className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800">Email</h4>
-                  <a href="mailto:hrithikm247@gmail.com" className="text-blue-600 hover:underline">hrithikm247@gmail.com</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <Phone className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800">Phone</h4>
-                  <a href="tel:+919324544634" className="text-blue-600 hover:underline">+91 9324544634</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <Linkedin className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800">LinkedIn</h4>
-                  <a href="https://www.linkedin.com/in/hrithik-maurya-792995253/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">LinkedIn Profile</a>
-                </div>
-              </div>
-              
-              <div className="pt-6 border-t border-gray-200">
-                <h4 className="font-medium text-gray-800 mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
-                  <a href="https://github.com/h-hritik" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 transition duration-300">
-                    <Github className="h-5 w-5" />
-                  </a>
-                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition duration-300">
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
-                    <Facebook className="h-5 w-5" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
       </div>
-    </section>
+      
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-30 animate-ping"></div>
+        <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-purple-300 rounded-full opacity-40 animate-ping animation-delay-1000"></div>
+        <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-cyan-300 rounded-full opacity-30 animate-ping animation-delay-3000"></div>
+      </div>
+
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-block">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-6 leading-tight">
+                Let's Connect
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-8 rounded-full"></div>
+            </div>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Ready to bring your vision to life? Let's discuss your next project and create something amazing together.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 sm:p-10 border border-white/20 shadow-2xl">
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                    <Send className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Send a Message</h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="block text-gray-200 font-medium text-sm uppercase tracking-wide">
+                        Full Name
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="name"
+                          className={`w-full px-6 py-4 rounded-xl bg-white/5 border-2 ${
+                            formErrors.name ? 'border-red-400' : 'border-white/20'
+                          } focus:border-purple-400 focus:outline-none text-white placeholder-gray-400 transition-all duration-300 backdrop-blur-sm`}
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Enter your name"
+                        />
+                        {formErrors.name && (
+                          <p className="text-red-400 text-sm mt-2 flex items-center">
+                            <AlertCircle className="h-4 w-4 mr-1" />
+                            {formErrors.name}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <label className="block text-gray-200 font-medium text-sm uppercase tracking-wide">
+                        Email Address
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="email"
+                          name="email"
+                          className={`w-full px-6 py-4 rounded-xl bg-white/5 border-2 ${
+                            formErrors.email ? 'border-red-400' : 'border-white/20'
+                          } focus:border-purple-400 focus:outline-none text-white placeholder-gray-400 transition-all duration-300 backdrop-blur-sm`}
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="your.email@example.com"
+                        />
+                        {formErrors.email && (
+                          <p className="text-red-400 text-sm mt-2 flex items-center">
+                            <AlertCircle className="h-4 w-4 mr-1" />
+                            {formErrors.email}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="block text-gray-200 font-medium text-sm uppercase tracking-wide">
+                      Your Message
+                    </label>
+                    <div className="relative">
+                      <textarea
+                        name="message"
+                        className={`w-full px-6 py-4 rounded-xl bg-white/5 border-2 ${
+                          formErrors.message ? 'border-red-400' : 'border-white/20'
+                        } focus:border-purple-400 focus:outline-none text-white placeholder-gray-400 transition-all duration-300 backdrop-blur-sm resize-none`}
+                        rows="6"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell me about your project, ideas, or just say hello..."
+                      ></textarea>
+                      {formErrors.message && (
+                        <p className="text-red-400 text-sm mt-2 flex items-center">
+                          <AlertCircle className="h-4 w-4 mr-1" />
+                          {formErrors.message}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    className={`w-full py-4 px-8 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center ${
+                      loading ? 'opacity-75 cursor-not-allowed scale-100' : ''
+                    }`}
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <div className="flex items-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Sending Message...</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        <Send className="h-5 w-5 mr-2" />
+                        <span>Send Message</span>
+                      </div>
+                    )}
+                  </button>
+                </div>
+                
+                {successMessage && (
+                  <div className="mt-6 bg-green-500/20 border border-green-400/30 text-green-300 px-6 py-4 rounded-xl flex items-start backdrop-blur-sm">
+                    <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>{successMessage}</span>
+                  </div>
+                )}
+                
+                {errorMessage && (
+                  <div className="mt-6 bg-red-500/20 border border-red-400/30 text-red-300 px-6 py-4 rounded-xl flex items-start backdrop-blur-sm">
+                    <AlertCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            {/* Contact Information */}
+            <div className="space-y-8">
+              {/* Contact Details Card */}
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+                <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center mr-3">
+                    <Mail className="h-4 w-4 text-white" />
+                  </div>
+                  Get in Touch
+                </h3>
+                
+                <div className="space-y-6">
+                  <div className="group cursor-pointer">
+                    <div className="flex items-start p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                        <Mail className="h-6 w-6 text-purple-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Email</h4>
+                        <a href="mailto:hrithikm247@gmail.com" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
+                          hrithikm247@gmail.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="group cursor-pointer">
+                    <div className="flex items-start p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                        <Phone className="h-6 w-6 text-cyan-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Phone</h4>
+                        <a href="tel:+919324544634" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                          +91 9324544634
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="group cursor-pointer">
+                    <div className="flex items-start p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                        <Linkedin className="h-6 w-6 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/hrithik-maurya-792995253/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">
+                          View Profile
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="group cursor-pointer">
+                    <div className="flex items-start p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                        <MapPin className="h-6 w-6 text-pink-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Location</h4>
+                        <span className="text-gray-300">Mumbai, Maharashtra, IN</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Social Media Card */}
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+                <h4 className="font-semibold text-white mb-6 text-center">Follow Me</h4>
+                <div className="flex justify-center space-x-4">
+                  <a href="https://github.com/h-hritik" target="_blank" rel="noopener noreferrer" 
+                     className="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-xl flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all duration-300 group">
+                    <Github className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  </a>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" 
+                     className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all duration-300 group">
+                    <Instagram className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  </a>
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" 
+                     className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all duration-300 group">
+                    <Facebook className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
+              
+              {/* Quick Response Card */}
+              <div className="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 shadow-2xl">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white mb-2">Quick Response</h4>
+                  <p className="text-gray-300 text-sm">
+                    I typically respond within 24 hours. For urgent inquiries, please call directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

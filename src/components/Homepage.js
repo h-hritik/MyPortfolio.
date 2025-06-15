@@ -1,5 +1,4 @@
 import { ArrowRight, Code, Github, Home, Linkedin, Mail, Phone, Twitter, User } from 'lucide-react';
-import React from 'react';
 import Image5 from "../images/expense.png";
 import Image from '../images/pass03.jpg';
 import Image3 from "../images/textconverter.png";
@@ -75,68 +74,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Section
-      <section id="about" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-2/5 mb-10 md:mb-0">
-              <div className="relative">
-                <div className="w-full h-80 bg-gray-200 rounded-lg overflow-hidden shadow-md">
-                  <img src="/about.jpg" alt="About Me" className="w-full h-full object-cover" />
-                </div>
-                <div className="absolute -bottom-5 -right-5 bg-blue-600 w-32 h-32 rounded-lg flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="font-bold text-2xl">2+</div>
-                    <div className="text-sm">Years of Experience</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="md:w-3/5 md:pl-16">
-              <div className="mb-4">
-                <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">About Me</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                A Passionate Web Developer
-              </h2>
-              <p className="text-gray-600 mb-6 text-lg">
-                I am a dedicated web developer with expertise in React, JavaScript, and backend technologies. I enjoy building innovative and
-                user-friendly applications that solve real-world problems.
-              </p>
-              <p className="text-gray-600 mb-8 text-lg">
-                When I am not coding, I enjoy learning new technologies and improving my skills. I believe in writing clean, efficient code and creating
-                seamless user experiences.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="flex items-center space-x-2">
-                  <ChevronRight className="text-blue-600 h-5 w-5" />
-                  <span className="text-gray-700">React.js</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <ChevronRight className="text-blue-600 h-5 w-5" />
-                  <span className="text-gray-700">JavaScript</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <ChevronRight className="text-blue-600 h-5 w-5" />
-                  <span className="text-gray-700">Node.js</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <ChevronRight className="text-blue-600 h-5 w-5" />
-                  <span className="text-gray-700">MongoDB</span>
-                </div>
-              </div>
-              
-              <a href="/projects" className="px-6 py-3 bg-gray-800 text-white font-medium rounded-lg shadow-md hover:bg-gray-900 transition duration-300 inline-flex items-center">
-                View Projects <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
-      {/* Projects Section */}
       <section id="projects" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
