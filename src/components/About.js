@@ -1,7 +1,8 @@
-import { Award, BookOpen, Calendar, Code, Download, ExternalLink, Heart, Mail, MapPin, Phone, User } from 'lucide-react';
+import { Award, BookOpen, Calendar, Code, Download, Heart, Mail, MapPin, Phone, User } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import resume from '../documents/Hritik-Maurya-FlowCV-Resume-20250424 (1).pdf';
+import resume from '../documents/resumeUpdated.pdf';
 import img from '../images/pass02.JPG';
+
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
@@ -42,14 +43,15 @@ const About = () => {
   }, []);
 
   const skills = [
-    { name: 'React', level: 90, color: 'from-blue-500 to-blue-600' },
-    { name: 'JavaScript', level: 85, color: 'from-yellow-500 to-yellow-600' },
-    { name: 'Node.js', level: 80, color: 'from-green-500 to-green-600' },
-    { name: 'SQL', level: 85, color: 'from-purple-500 to-purple-600' },
-    { name: 'MongoDB', level: 75, color: 'from-emerald-500 to-emerald-600' },
-    { name: 'Next.js', level: 80, color: 'from-gray-700 to-gray-800' },
+    { name: 'React', level: 60, color: 'from-blue-500 to-blue-600' },
+    { name: 'JavaScript', level: 75, color: 'from-yellow-500 to-yellow-600' },
+    { name: 'Node.js', level: 75, color: 'from-green-500 to-green-600' },
+    { name: 'SQL', level: 90, color: 'from-purple-500 to-purple-600' },
+    { name: 'MongoDB', level: 65, color: 'from-emerald-500 to-emerald-600' },
+    { name: 'Next.js', level: 50, color: 'from-gray-700 to-gray-800' },
     { name: 'UI/UX Design', level: 70, color: 'from-pink-500 to-pink-600' },
-    { name: 'MySQL', level: 82, color: 'from-orange-500 to-orange-600' }
+    { name: 'C++', level: 82, color: 'from-orange-500 to-orange-600' }
+    //{ name: 'C', level: 80, color: 'from-yellow-500 to-yellow-600' }
   ];
 
   const SkillBar = ({ skill }) => {
@@ -79,10 +81,10 @@ const About = () => {
   const TabButton = ({ tab, label, icon: Icon }) => (
     <button
       onClick={() => setActiveTab(tab)}
-      className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 ${
+      className={`flex items-center px-4 py-3 rounded-lg transition-all duration-300 ${
         activeTab === tab
-          ? 'bg-blue-600 text-white shadow-lg'
-          : 'bg-white text-gray-600 hover:bg-gray-50'
+          ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+          : 'bg-white text-gray-600 hover:bg-gray-50 hover:shadow'
       }`}
     >
       <Icon className="w-4 h-4 mr-2" />
@@ -94,7 +96,6 @@ const About = () => {
     <div className="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        {/* Animated Background */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
           <div className="absolute top-0 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
@@ -103,7 +104,6 @@ const About = () => {
 
         <div className="relative container mx-auto px-4 py-16">
           <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* Hero Content */}
             <div className="max-w-6xl mx-auto">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden">
                 <div className="flex flex-col lg:flex-row">
@@ -111,16 +111,13 @@ const About = () => {
                   <div className="lg:w-2/5 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 p-8 flex items-center justify-center relative">
                     <div className="absolute inset-0 bg-black/10"></div>
                     <div className="relative z-10">
-                      <div className="w-72 h-72 rounded-full border-4 border-white shadow-2xl overflow-hidden">
-                       <div className="w-72 h-72 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-gray-200 flex items-center justify-center">
-  {img ? (
-    <img src={img} alt="Profile" className="w-full h-full object-cover" />
-  ) : (
-    <div className="text-6xl text-gray-400">H</div>
-  )}
-</div>
+                      <div className="w-72 h-72 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-gray-200 flex items-center justify-center">
+                        {img ? (
+                          <img src={img} alt="Profile" className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="text-6xl text-gray-400">H</div>
+                        )}
                       </div>
-                      {/* Floating Elements */}
                       <div className="absolute -top-4 -left-4 w-16 h-16 rounded-full bg-yellow-400 opacity-80 animate-bounce"></div>
                       <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full bg-blue-300 opacity-80 animate-bounce animation-delay-1000"></div>
                       <div className="absolute top-1/2 -right-6 w-8 h-8 rounded-full bg-pink-300 opacity-80 animate-bounce animation-delay-2000"></div>
@@ -172,26 +169,25 @@ const About = () => {
                     </div>
                     
                     {/* Action Buttons */}
-                <div className="flex flex-wrap gap-4">
-  {/* Resume Download Button */}
-  <a 
-    href={resume} 
-    download="YourName_Resume.pdf"
-    className="inline-flex items-center px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-blue-600 transition-all duration-300 no-underline"
-  >
-    <Download className="w-5 h-5 mr-2" />
-    Download Resume
-  </a>
-
-  {/* Get In Touch Button */}
-  <button 
-    onClick={() => window.location.href = 'mailto:your.email@example.com'}
-    className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
-  >
-    <Mail className="w-5 h-5 mr-2" />
-    Get In Touch
-  </button>
-</div>
+                    <div className="flex flex-wrap gap-4">
+                      <a 
+                        href={resume} 
+                        download="Hritik_Maurya_Resume.pdf"
+                        className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <Download className="w-5 h-5 mr-2" />
+                        Download Resume
+                      </a>
+                    
+                      <button 
+                        onClick={() => window.location.href = 'mailto:your.email@example.com'}
+                        className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
+                      >
+                        <Mail className="w-5 h-5 mr-2" />
+                        Get In Touch
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -212,8 +208,9 @@ const About = () => {
 
           {/* Tab Content */}
           <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+            {/* Overview Tab */}
             {activeTab === 'overview' && (
-              <div className="space-y-8">
+              <div id="overview-content" className="space-y-8">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
                   <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
@@ -269,46 +266,51 @@ const About = () => {
               </div>
             )}
 
+            {/* Experience Tab */}
             {activeTab === 'experience' && (
-              <div className="space-y-8">
+              <div id="experience-content" className="space-y-8">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold text-gray-800 mb-4">Professional Experience</h2>
                   <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
                 </div>
                 
                 <div className="space-y-8">
-                  {/* Current Role - SQL Developer */}
+                  {/* UNI Design JEWELLERY PRIVATE LTD */}
                   <div className="relative">
                     <div className="absolute left-4 top-8 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ml-12">
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-500 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ml-12">
                       <div className="absolute -left-2 top-8 w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full"></div>
                       <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-gray-800">SQL Developer</h3>
-                          <p className="text-lg text-gray-600 font-medium">Unidesign Pvt. Ltd., Andheri MIDC, Mumbai</p>
+                          <h3 className="text-2xl font-bold text-gray-800">INTERNSHIP - SQL Developer</h3>
+                          <p className="text-lg text-gray-600 font-medium">UNI Design JEWELLERY PRIVATE LTD</p>
                         </div>
                         <div className="flex items-center text-blue-600 font-semibold">
                           <Calendar className="w-4 h-4 mr-2" />
-                          May 21, 2025 – Present
+                          05/2025 – Present | seepz Andheri(E), mumbai
                         </div>
                       </div>
                       <div className="bg-white p-4 rounded-lg">
                         <ul className="space-y-3 text-gray-700">
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Appointed as a Developer, currently working in the role of <strong>SQL Developer</strong></span>
+                            <span>Working as an SQL Developer at Uni Design Jewellery Pvt. Ltd.</span>
                           </li>
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Responsible for managing, maintaining, and optimizing databases to ensure efficient data storage, retrieval, and analysis</span>
+                            <span>Gaining hands-on experience in writing and optimizing SQL queries and stored procedures.</span>
                           </li>
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Work closely with cross-functional teams to design and implement database solutions based on project requirements</span>
+                            <span>Involved in report design and creation to support business decision-making.</span>
                           </li>
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Participate in performance tuning, writing complex SQL queries, and ensuring data integrity and security</span>
+                            <span>Collaborating with cross-functional teams for data analysis and reporting needs.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <span>Adapting quickly to new tools and continuously improving database skills.</span>
                           </li>
                         </ul>
                       </div>
@@ -326,7 +328,7 @@ const About = () => {
                         </div>
                         <div className="flex items-center text-green-600 font-semibold">
                           <Calendar className="w-4 h-4 mr-2" />
-                          04/2025 – 05/2025
+                          04/2025 – 04/2025
                         </div>
                       </div>
                       <div className="bg-white p-4 rounded-lg">
@@ -338,14 +340,6 @@ const About = () => {
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                             <span>Gained hands-on experience in Node.js, React.js, MongoDB, Express.js</span>
-                          </li>
-                          <li className="flex items-start">
-                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Developed and maintained RESTful APIs</span>
-                          </li>
-                          <li className="flex items-start">
-                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Collaborated with team members using Git version control</span>
                           </li>
                         </ul>
                       </div>
@@ -370,15 +364,11 @@ const About = () => {
                         <ul className="space-y-3 text-gray-700">
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Contributed to full-stack development using MERN stack and Next.js</span>
+                            <span>Contributed to full-stack development using the MERN stack and Next.js</span>
                           </li>
                           <li className="flex items-start">
                             <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                             <span>Gained hands-on experience in Node.js, React.js, MongoDB, Express.js, and Next.js</span>
-                          </li>
-                          <li className="flex items-start">
-                            <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>Implemented server-side rendering for improved performance</span>
                           </li>
                         </ul>
                       </div>
@@ -388,8 +378,9 @@ const About = () => {
               </div>
             )}
 
+            {/* Skills Tab */}
             {activeTab === 'skills' && (
-              <div className="space-y-8">
+              <div id="skills-content" className="space-y-8">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold text-gray-800 mb-4">Technical Skills</h2>
                   <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
@@ -422,56 +413,35 @@ const About = () => {
               </div>
             )}
 
+            {/* Achievements Tab */}
             {activeTab === 'achievements' && (
-              <div className="space-y-8">
+              <div id="achievements-content" className="space-y-8">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold text-gray-800 mb-4">Achievements & Recognition</h2>
                   <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-6">
-                      <Award className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-3">IT Quiz Competition Winner</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Demonstrated extensive knowledge in information technology concepts, current trends, 
-                      and emerging technologies. Competed against numerous participants and secured first place.
-                    </p>
-                  </div>
+                  
 
                   <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center mb-6">
                       <Code className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Top % in Coding Contest</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Top 10 % in Coding Contest</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Ranked among the top participants in a highly competitive coding challenge. 
-                      Showcased problem-solving skills and algorithmic thinking under pressure.
+                      Ranked among the 500 participants in a highly competitive coding challenge. 
+                      Showcased problem-solving skills .
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center mb-6">
-                      <ExternalLink className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Successful Project Deliveries</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Successfully delivered multiple full-stack projects with excellent client satisfaction. 
-                      Consistently met deadlines and exceeded performance expectations.
-                    </p>
-                  </div>
+                
 
                   <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center mb-6">
                       <BookOpen className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Continuous Learning</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Actively pursuing advanced certifications and staying updated with the latest 
-                      technologies in web development and database management.
-                    </p>
+                    
                   </div>
                 </div>
               </div>
@@ -491,19 +461,14 @@ const About = () => {
               Ready to bring your ideas to life? I'm always excited to work on new projects and challenges.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <a href="mailto:your.email@example.com" className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <Mail className="w-5 h-5 mr-2" />
                 Start a Project
-              </button>
-              <button className="inline-flex items-center px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-blue-600 transition-all duration-300">
-                <Download className="w-5 h-5 mr-2" />
-                Download Resume
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
