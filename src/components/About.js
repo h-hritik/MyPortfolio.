@@ -66,6 +66,8 @@ const About = () => {
     ,
   ];
 
+
+
   const SkillBar = ({ skill }) => {
     const [width, setWidth] = useState(0);
     
