@@ -1,9 +1,11 @@
 import { ArrowRight, Code, Github, Home, Linkedin, Mail, Phone, Twitter, User } from 'lucide-react';
 import Image5 from "../images/expense.png";
-import Image from '../images/pass03.jpg';
+//import Image from '../images/pass03.jpg';
 import Image3 from "../images/textconverter.png";
 const HomePage = () => {
+   const Image = 'https://i.ibb.co/tp8zTRyt/pass03.jpg';
   return (
+   
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-md fixed w-full top-0 z-10">
@@ -13,14 +15,7 @@ const HomePage = () => {
             <span className="font-medium text-gray-800 ml-2">Hritik Maurya</span>
           </div>
           
-          <nav className="hidden md:flex">
-            <ul className="flex space-x-8">
-              <li><a href="/home" className="text-gray-800 hover:text-blue-600 font-medium transition duration-300">Home</a></li>
-              <li><a href="/about" className="text-gray-800 hover:text-blue-600 font-medium transition duration-300">About</a></li>
-              <li><a href="/projects" className="text-gray-800 hover:text-blue-600 font-medium transition duration-300">Projects</a></li>
-              <li><a href="/contact" className="text-gray-800 hover:text-blue-600 font-medium transition duration-300">Contact</a></li>
-            </ul>
-          </nav>
+         
           
           <div className="md:hidden">
             <button className="p-2 focus:outline-none">
@@ -65,7 +60,7 @@ const HomePage = () => {
                 <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
                     <Code className="text-blue-600 h-5 w-5" />
-                    <span className="font-bold text-gray-800">Web Developer</span>
+                    <span className="font-bold text-gray-800">SQL Developer</span>
                   </div>
                 </div>
               </div>
