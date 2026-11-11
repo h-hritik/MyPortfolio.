@@ -3,6 +3,7 @@ import About from '../components/sections/About'
 import Skills from '../components/sections/Skills'
 import Experience from '../components/sections/Experience'
 import Projects from '../components/sections/Projects'
+import Notes from '../components/sections/Notes'
 import CaseStudies from '../components/sections/CaseStudies'
 import LearningRoadmap from '../components/sections/LearningRoadmap'
 import Certifications from '../components/sections/Certifications'
@@ -18,6 +19,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects />
+      <Notes />
       <CaseStudies />
       <LearningRoadmap />
       <Certifications />

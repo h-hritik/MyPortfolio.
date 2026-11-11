@@ -1,0 +1,72 @@
+[
+  {
+    "id": "sql-developer-prep",
+    "title": "SQL Developer Interview Prep & Scenarios",
+    "description": "Comprehensive practical questions covering JOINs, Subqueries, Normalization, Stored Procedures, and real business scenarios.",
+    "category": "MS SQL & T-SQL",
+    "fileName": "SQL_Developer_Interview_Prep_Hritik.pdf",
+    "fileSize": "20 KB",
+    "tags": ["T-SQL", "MSSQL", "Optimization", "Joins"],
+    "featured": true
+  },
+  {
+    "id": "database-developer-100",
+    "title": "100 Database Developer Questions & Answers",
+    "description": "In-depth guide covering DDL/DML, Constraints, Indexing & Performance Tuning, Transactions (ACID), Triggers, and Window Functions.",
+    "category": "Database Engineering",
+    "fileName": "Database_Developer_Interview_Questions_100.pdf",
+    "fileSize": "38 KB",
+    "tags": ["MSSQL", "MySQL", "Indexing", "ACID", "Stored Procedures"],
+    "featured": true
+  },
+  {
+    "id": "main-interview-qa",
+    "title": "Core Technical & Experience Interview Notes",
+    "description": "Structured answers on handling production jewellery business data, query performance tuning, and project walkthroughs.",
+    "category": "Interview Strategy",
+    "fileName": "Main InterView Questions.pdf",
+    "fileSize": "4.1 MB",
+    "tags": ["Career", "Behavioral", "System Knowledge"],
+    "featured": true
+  },
+  {
+    "id": "mysql-handbook",
+    "title": "MySQL Handbook & Administration",
+    "description": "Practical setup, Workbench usage, user privilege management, server administration, and database schema creation.",
+    "category": "MySQL",
+    "fileName": "MySQL Handbook.pdf",
+    "fileSize": "771 KB",
+    "tags": ["MySQL", "Workbench", "Administration", "Linux"],
+    "featured": false
+  },
+  {
+    "id": "javascript-interview",
+    "title": "JavaScript Core & Advanced Concepts",
+    "description": "Complete breakdown of Event Loop, Closures, Hoisting, Promises, ES6+ features, and Prototype inheritance.",
+    "category": "Programming Languages",
+    "fileName": "Javascript interview questions.pdf",
+    "fileSize": "4.1 MB",
+    "tags": ["JavaScript", "ES6+", "Async", "DOM"],
+    "featured": false
+  },
+  {
+    "id": "react-interview-prep",
+    "title": "React.js 50+ Key Questions & Lifecycle",
+    "description": "Virtual DOM mechanics, Custom Hooks, State Management, Reconciliation, Context API, and Performance best practices.",
+    "category": "Frontend Development",
+    "fileName": "React Js Interview .pdf",
+    "fileSize": "775 KB",
+    "tags": ["React", "Hooks", "Virtual DOM", "Frontend"],
+    "featured": false
+  },
+  {
+    "id": "top-react-questions",
+    "title": "Top 30 React Architectural Questions",
+    "description": "Design patterns, component composition, optimization strategies, and real-world frontend architecture scenarios.",
+    "category": "Frontend Development",
+    "fileName": "Top 30 React Interview Questions.pdf",
+    "fileSize": "69 MB",
+    "tags": ["React", "Architecture", "Performance"],
+    "featured": false
+  }
+]
