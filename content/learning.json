@@ -1,8 +1,48 @@
 [
   {
+    "id": "python-data-eng",
+    "topic": "Python for Data Engineering",
+    "description": "Core Python programming, data structures, and essential data libraries (Pandas, NumPy) for scripting ETL pipelines and automated database workflows.",
+    "status": "Learning",
+    "startDate": "2026-11",
+    "completedDate": null,
+    "resources": ["Python Docs", "DataCamp", "Real Python"],
+    "hidden": false
+  },
+  {
+    "id": "etl-pipeline-design",
+    "topic": "ETL & Pipeline Architecture",
+    "description": "Designing Extract, Transform, Load (ETL/ELT) workflows, batch vs. streaming concepts, data cleaning, and orchestration with tools like Apache Airflow.",
+    "status": "Learning",
+    "startDate": "2026-11",
+    "completedDate": null,
+    "resources": ["Fundamentals of Data Engineering", "Hands-on projects"],
+    "hidden": false
+  },
+  {
+    "id": "data-warehousing",
+    "topic": "Data Warehousing & Dimensional Modeling",
+    "description": "Star & Snowflake schemas, Fact and Dimension tables, SCDs (Slowly Changing Dimensions), and modern cloud warehouses (Snowflake, BigQuery).",
+    "status": "Planned",
+    "startDate": null,
+    "completedDate": null,
+    "resources": ["Kimball Dimensional Modeling Techniques"],
+    "hidden": false
+  },
+  {
+    "id": "distributed-data-spark",
+    "topic": "Distributed Computing (PySpark)",
+    "description": "Big data processing with Apache Spark and PySpark for high-volume data transformations and distributed queries.",
+    "status": "Planned",
+    "startDate": null,
+    "completedDate": null,
+    "resources": ["Spark Documentation", "Hands-on labs"],
+    "hidden": false
+  },
+  {
     "id": "oracle-sql",
     "topic": "Oracle SQL & PL/SQL",
-    "description": "Learning Oracle SQL syntax, PL/SQL blocks, cursors and stored packages to expand beyond MS SQL Server.",
+    "description": "Learning Oracle SQL syntax, PL/SQL blocks, cursors, and stored packages to expand beyond MS SQL Server.",
     "status": "Learning",
     "startDate": "2026-11",
     "completedDate": null,
@@ -11,8 +51,8 @@
   },
   {
     "id": "power-bi",
-    "topic": "Power BI",
-    "description": "Building interactive dashboards and reports to complement SQL-based MIS reporting.",
+    "topic": "Power BI & Data Visualization",
+    "description": "Building interactive dashboards, DAX queries, and reports to complement SQL-based MIS reporting.",
     "status": "Learning",
     "startDate": "2026-10",
     "completedDate": null,
@@ -21,8 +61,8 @@
   },
   {
     "id": "query-optimisation",
-    "topic": "Advanced Query Optimisation",
-    "description": "Execution plans, index strategies and performance tuning on MS SQL Server.",
+    "topic": "Advanced Query Optimization & Performance Tuning",
+    "description": "Execution plans, index strategies, fragmentation, statistics, and query tuning on MS SQL Server.",
     "status": "Learning",
     "startDate": "2025-06",
     "completedDate": null,

@@ -63,10 +63,13 @@
     },
     {
       "id": "learning",
-      "label": "Currently Learning",
+      "label": "Currently Learning (Data Engineering & Systems)",
       "skills": [
-        { "name": "Oracle SQL", "hidden": false },
-        { "name": "PL/SQL", "hidden": false }
+        { "name": "Python (Pandas / NumPy)", "hidden": false },
+        { "name": "ETL Pipelines", "hidden": false },
+        { "name": "Data Warehousing", "hidden": false },
+        { "name": "PySpark (Planned)", "hidden": false },
+        { "name": "Oracle SQL & PL/SQL", "hidden": false }
       ]
     }
   ]
