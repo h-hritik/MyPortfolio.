@@ -1,0 +1,38 @@
+{
+  "sql-developer": {
+    "headline": "MS SQL Developer | T-SQL · Stored Procedures · Query Optimisation | MIS Reporting",
+    "summary": "Writing and tuning T-SQL, building MIS reports, and managing jewellery business data on MS SQL Server.",
+    "skillCategoryOrder": ["databases", "query-dev", "reporting", "backend", "frontend", "tools", "learning"],
+    "featuredProjects": ["dental-clinic", "inotebook"]
+  },
+  "plsql-developer": {
+    "headline": "PL/SQL Developer (Learning) | T-SQL · Stored Procedures · Oracle SQL",
+    "summary": "MS SQL background transitioning to Oracle PL/SQL — stored procedures, cursors and package development.",
+    "skillCategoryOrder": ["databases", "query-dev", "learning", "reporting", "backend", "frontend", "tools"],
+    "featuredProjects": ["dental-clinic", "inotebook"]
+  },
+  "database-developer": {
+    "headline": "Database Developer | T-SQL · Stored Procedures · Schema Design | MERN Stack",
+    "summary": "Designing schemas, writing stored procedures, optimising queries, and building full-stack data-driven applications.",
+    "skillCategoryOrder": ["databases", "query-dev", "backend", "frontend", "reporting", "tools", "learning"],
+    "featuredProjects": ["dental-clinic", "inotebook"]
+  },
+  "dba": {
+    "headline": "Junior DBA (Aspiring) | MS SQL Server · Query Optimisation · MIS Reporting",
+    "summary": "Learning database administration — backup/recovery, performance tuning and user management on MS SQL Server.",
+    "skillCategoryOrder": ["databases", "query-dev", "reporting", "tools", "backend", "frontend", "learning"],
+    "featuredProjects": ["dental-clinic"]
+  },
+  "bi-analyst": {
+    "headline": "BI / Data Analyst (Aspiring) | T-SQL · MIS Reporting · Power BI",
+    "summary": "Building MIS and analytical reports in SQL Server and Excel; learning Power BI for dashboard development.",
+    "skillCategoryOrder": ["reporting", "databases", "query-dev", "tools", "learning", "backend", "frontend"],
+    "featuredProjects": ["dental-clinic"]
+  },
+  "data-engineer": {
+    "headline": "Data Engineer (Aspiring) | T-SQL · ETL · MERN Stack",
+    "summary": "SQL background with full-stack experience; targeting ETL pipelines, data warehousing and cloud data platforms.",
+    "skillCategoryOrder": ["databases", "query-dev", "backend", "tools", "reporting", "learning", "frontend"],
+    "featuredProjects": ["dental-clinic", "inotebook"]
+  }
+}

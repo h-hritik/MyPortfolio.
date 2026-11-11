@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Hritik Maurya — MS SQL Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Professional portfolio built with React 18, Vite, and Tailwind CSS. All content is data-driven from JSON and Markdown files.
 
-## Available Scripts
+## 🚀 Quick Start (Local Development)
 
-In the project directory, you can run:
+```bash
+# Install dependencies
+npm install
 
-### `npm start`
+# Start development server
+npm run dev
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Build for production
+npm run build
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Preview production build
+npm run preview
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌐 Deploy to Vercel
 
-### `npm run build`
+1. Push this branch or merge to `main`.
+2. Connect the repo on [Vercel](https://vercel.com).
+3. Framework Preset: **Vite**
+4. Build Command: `npm run build`
+5. Output Directory: `dist`
+6. `vercel.json` is already configured for single-page application routing.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ How to Maintain & Update Content
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All content lives in `/content`. Components purely render data.
 
-### `npm run eject`
+### 1. Change Target Career Role
+Edit `src/config.js`:
+```js
+export const primaryRole = 'sql-developer';
+// Options: 'sql-developer' | 'plsql-developer' | 'database-developer' | 'dba' | 'bi-analyst' | 'data-engineer'
+```
+This automatically updates headlines, summaries, skill order, and featured projects from `content/roles.json`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Add or Edit Projects
+Add an entry to `content/projects.json`:
+```json
+{
+  "id": "my-new-project",
+  "title": "Project Name",
+  "shortDescription": "One-line description",
+  "fullDescription": "Detailed overview...",
+  "technologies": ["MS SQL", "Python"],
+  "category": "Database",
+  "githubUrl": "https://github.com/...",
+  "liveUrl": "https://...",
+  "year": 2026,
+  "featured": true,
+  "archived": false,
+  "hidden": false
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Add a SQL Case Study
+Create a `.md` file in `content/case-studies/`:
+```markdown
+---
+title: "Query Optimisation on Inventory Table"
+slug: "inventory-query-opt"
+summary: "Rebuilt indexing strategy to eliminate bookmark lookups."
+date: "2026-03-01"
+tags: ["T-SQL", "Performance"]
+hidden: false
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Problem
+...
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Approach
+...
 
-## Learn More
+## Sample SQL
+\`\`\`sql
+SELECT ...
+\`\`\`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Result
+...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## What I Learned
+...
+```
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 4. Update Resume PDFs
+1. Put the PDF in `public/resumes/` (e.g. `public/resumes/Hritik_Maurya_SQL_Developer.pdf`).
+2. Update the `updatedDate` in `content/resumes.json`.

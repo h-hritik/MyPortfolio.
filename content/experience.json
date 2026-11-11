@@ -1,0 +1,64 @@
+[
+  {
+    "id": "aryashan-sql",
+    "role": "SQL Developer",
+    "company": "Aryashan Tech Pvt Ltd",
+    "companyNote": "Deployed at client: Uni Design Jewellery Pvt. Ltd., SEEPZ, Andheri (E), Mumbai",
+    "startDate": "2025-05",
+    "endDate": null,
+    "isCurrent": true,
+    "type": "Full-time",
+    "bullets": [
+      "Managing jewellery business data on MS SQL Server — sales, inventory and vendor information",
+      "Writing and optimising complex T-SQL queries, joins and stored procedures for business operations",
+      "Creating comprehensive MIS and analytical reports for business tracking and decision-making",
+      "Supporting data validation, analysis and database migration projects",
+      "Collaborating with cross-functional teams to deliver actionable insights"
+    ],
+    "hidden": false
+  },
+  {
+    "id": "techmandala-intern",
+    "role": "Full Stack Developer Intern",
+    "company": "TechMandala Solutions LLP",
+    "companyNote": "",
+    "startDate": "2025-04",
+    "endDate": "2025-04",
+    "isCurrent": false,
+    "type": "Internship",
+    "bullets": [
+      "Contributed to full-stack development using the MERN stack",
+      "Gained hands-on experience in Node.js, React.js, MongoDB and Express.js"
+    ],
+    "hidden": false
+  },
+  {
+    "id": "prodigy-intern",
+    "role": "Full Stack Developer Intern",
+    "company": "Prodigy Info Tech",
+    "companyNote": "",
+    "startDate": "2025-03",
+    "endDate": "2025-04",
+    "isCurrent": false,
+    "type": "Internship",
+    "bullets": [
+      "Worked on MERN stack projects using React, Node.js, MongoDB and Express"
+    ],
+    "hidden": false
+  },
+  {
+    "id": "sptc-training",
+    "role": "Web Development Training",
+    "company": "SPTC Company",
+    "companyNote": "",
+    "startDate": "2024-10",
+    "endDate": "2024-12",
+    "isCurrent": false,
+    "type": "Training",
+    "bullets": [
+      "Intensive 3-month programme focused on front-end development, SQL queries and C programming",
+      "Daily assignments and hands-on projects"
+    ],
+    "hidden": false
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "Hritik Maurya",
+  "initials": "HM",
+  "location": "Bhandup, Mumbai, India",
+  "email": "hrithikm247@gmail.com",
+  "phone": "+91 9324544634",
+  "linkedin": "https://linkedin.com/in/hrithik-maurya-792995253",
+  "github": "https://github.com/h-hritik",
+  "photo": "https://i.ibb.co/dsXsDYkd/pass02.jpg",
+  "bio": "MS SQL Developer with hands-on experience managing and optimising jewellery business data on MS SQL Server. I write and tune complex T-SQL queries, stored procedures and joins, build MIS reports and support data migration and validation projects. Alongside my SQL work I have a full-stack web development background using the MERN stack.",
+  "openToWork": true
+}

@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "id": "databases",
+      "label": "Databases",
+      "skills": [
+        { "name": "MS SQL Server", "hidden": false },
+        { "name": "MySQL", "hidden": false },
+        { "name": "PostgreSQL", "hidden": false },
+        { "name": "MongoDB", "hidden": false }
+      ]
+    },
+    {
+      "id": "query-dev",
+      "label": "SQL & Query Development",
+      "skills": [
+        { "name": "T-SQL", "hidden": false },
+        { "name": "Stored Procedures", "hidden": false },
+        { "name": "Complex Joins", "hidden": false },
+        { "name": "Query Optimisation", "hidden": false },
+        { "name": "Database Migration", "hidden": false },
+        { "name": "Data Validation", "hidden": false }
+      ]
+    },
+    {
+      "id": "reporting",
+      "label": "Reporting & Analytics",
+      "skills": [
+        { "name": "MIS Reports", "hidden": false },
+        { "name": "Excel", "hidden": false },
+        { "name": "Power BI", "hidden": false }
+      ]
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "skills": [
+        { "name": "Node.js", "hidden": false },
+        { "name": "Express.js", "hidden": false },
+        { "name": "REST APIs", "hidden": false },
+        { "name": "JWT Auth", "hidden": false }
+      ]
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "skills": [
+        { "name": "React.js", "hidden": false },
+        { "name": "JavaScript", "hidden": false },
+        { "name": "HTML / CSS", "hidden": false },
+        { "name": "Tailwind CSS", "hidden": false }
+      ]
+    },
+    {
+      "id": "tools",
+      "label": "Tools & Workflow",
+      "skills": [
+        { "name": "Git", "hidden": false },
+        { "name": "GitHub", "hidden": false },
+        { "name": "Postman", "hidden": false },
+        { "name": "SSMS", "hidden": false }
+      ]
+    },
+    {
+      "id": "learning",
+      "label": "Currently Learning",
+      "skills": [
+        { "name": "Oracle SQL", "hidden": false },
+        { "name": "PL/SQL", "hidden": false }
+      ]
+    }
+  ]
+}

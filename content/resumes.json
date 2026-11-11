@@ -1,0 +1,26 @@
+[
+  {
+    "role": "SQL Developer",
+    "file": "/resumes/Hritik_Maurya_SQL_Developer.pdf",
+    "updatedDate": "Jan 2025",
+    "isDefault": true
+  },
+  {
+    "role": "Database Developer",
+    "file": "/resumes/Hritik_Maurya_Database_Developer.pdf",
+    "updatedDate": "Jan 2025",
+    "isDefault": false
+  },
+  {
+    "role": "Junior DBA",
+    "file": "/resumes/Hritik_Maurya_Junior_DBA.pdf",
+    "updatedDate": "Jan 2025",
+    "isDefault": false
+  },
+  {
+    "role": "PL/SQL Developer",
+    "file": "/resumes/Hritik_Maurya_PLsql_Developer.pdf",
+    "updatedDate": "Jan 2025",
+    "isDefault": false
+  }
+]

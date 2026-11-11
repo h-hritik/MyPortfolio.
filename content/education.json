@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bsc-it",
+    "degree": "B.Sc. Information Technology",
+    "institution": "Mumbai University",
+    "college": "S.M. Shetty Degree College, Powai",
+    "period": "2021 – 2024",
+    "description": "Solid foundation in information technology, software development, database management and network architecture.",
+    "grade": null,
+    "hidden": false
+  },
+  {
+    "id": "science",
+    "degree": "Higher Secondary Certificate (Science)",
+    "institution": "IDUBS College",
+    "college": "",
+    "period": "2019 – 2021",
+    "description": "Science and mathematics with a keen interest in technology.",
+    "grade": "69%",
+    "hidden": false
+  },
+  {
+    "id": "high-school",
+    "degree": "Secondary School Certificate",
+    "institution": "Saraswati English High School",
+    "college": "",
+    "period": "Until 2019",
+    "description": "Developed interest in technology through science and mathematics.",
+    "grade": "67%",
+    "hidden": false
+  }
+]

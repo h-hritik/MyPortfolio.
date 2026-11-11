@@ -1,0 +1,32 @@
+[
+  {
+    "id": "oracle-sql",
+    "topic": "Oracle SQL & PL/SQL",
+    "description": "Learning Oracle SQL syntax, PL/SQL blocks, cursors and stored packages to expand beyond MS SQL Server.",
+    "status": "Learning",
+    "startDate": "2026-11",
+    "completedDate": null,
+    "resources": ["Oracle documentation", "online courses"],
+    "hidden": false
+  },
+  {
+    "id": "power-bi",
+    "topic": "Power BI",
+    "description": "Building interactive dashboards and reports to complement SQL-based MIS reporting.",
+    "status": "Learning",
+    "startDate": "2026-10",
+    "completedDate": null,
+    "resources": ["Microsoft Learn"],
+    "hidden": false
+  },
+  {
+    "id": "query-optimisation",
+    "topic": "Advanced Query Optimisation",
+    "description": "Execution plans, index strategies and performance tuning on MS SQL Server.",
+    "status": "Learning",
+    "startDate": "2025-06",
+    "completedDate": null,
+    "resources": ["Brent Ozar courses", "MS Docs"],
+    "hidden": false
+  }
+]

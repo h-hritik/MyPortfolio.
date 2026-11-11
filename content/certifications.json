@@ -1,0 +1,38 @@
+[
+  {
+    "id": "js-cert",
+    "title": "JavaScript",
+    "issuer": "Simplilearn",
+    "date": "2023",
+    "url": "https://simpli-web.app.link/e/BuUL4FR4OOb",
+    "description": "Advanced JavaScript — ES6+, DOM manipulation and asynchronous programming.",
+    "hidden": false
+  },
+  {
+    "id": "react-cert",
+    "title": "React",
+    "issuer": "Simplilearn",
+    "date": "2023",
+    "url": "https://simpli-web.app.link/e/1VN9VAG4OOb",
+    "description": "Component architecture, React hooks and state management.",
+    "hidden": false
+  },
+  {
+    "id": "mysql-cert",
+    "title": "MySQL",
+    "issuer": "Simplilearn",
+    "date": "2022",
+    "url": "https://simpli-web.app.link/e/3CBQgmI4OOb",
+    "description": "Database design, SQL queries, optimisation and administration fundamentals.",
+    "hidden": false
+  },
+  {
+    "id": "cpp-cert",
+    "title": "C++",
+    "issuer": "Simplilearn",
+    "date": "2022",
+    "url": "https://simpli-web.app.link/e/jxZLVKL4OOb",
+    "description": "Object-oriented programming, memory management and data structures.",
+    "hidden": false
+  }
+]
